@@ -26,7 +26,7 @@ class PlayerViewController: AVPlayerViewController {
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         
-        //player!.play()
+        player!.play()
     
     }
     
