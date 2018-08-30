@@ -18,19 +18,19 @@ class ViewController: UIViewController, UIPageViewControllerDataSource {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        pageViewController = self.storyboard?.instantiateViewControllerWithIdentifier("pagevc") as! PageViewController
+        pageViewController = self.storyboard?.instantiateViewController(withIdentifier: "pagevc") as! PageViewController
         pageViewController.dataSource = self
         
-        let startingvc = self.viewControllerAtIndex(0)
+        let startingvc = self.viewControllerAtIndex(index: 0)
         let viewControllers = [startingvc!]
         
-        self.pageViewController.setViewControllers(viewControllers, direction: .Forward, animated: true, completion: nil)
+        self.pageViewController.setViewControllers(viewControllers, direction: .forward, animated: true, completion: nil)
       
         //pageViewController.view.frame = CGRectMake(0, 0, self., <#T##height: CGFloat##CGFloat#>)
     
         self.addChildViewController(pageViewController)
         self.view.addSubview(pageViewController.view)
-        self.pageViewController.didMoveToParentViewController(self)
+        self.pageViewController.didMove(toParentViewController: self)
     }
 
     override func didReceiveMemoryWarning() {
@@ -38,9 +38,7 @@ class ViewController: UIViewController, UIPageViewControllerDataSource {
         // Dispose of any resources that can be recreated.
     }
 
-    
-
-    func pageViewController(pageViewController: UIPageViewController, viewControllerBeforeViewController viewController: UIViewController) -> UIViewController? {
+    func pageViewController(_ pageViewController: UIPageViewController, viewControllerAfter viewController: UIViewController) -> UIViewController? {
         
         
         var index = (viewController as! PlayerViewController).pageIndex!
@@ -48,27 +46,26 @@ class ViewController: UIViewController, UIPageViewControllerDataSource {
         if index == 0 || index == NSNotFound{
             return nil
         }
-    
-        --index
         
-        return self.viewControllerAtIndex(index)
+        index = index - 1
+        
+        return self.viewControllerAtIndex(index: index)
     }
     
-    func pageViewController(pageViewController: UIPageViewController, viewControllerAfterViewController viewController: UIViewController) -> UIViewController? {
-        
+    func pageViewController(_ pageViewController: UIPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController? {
         var index = (viewController as! PlayerViewController).pageIndex!
         
         if index == NSNotFound{
             return nil
         }
-       
-        ++index
+        
+        index = index + 1
         
         if index == 3 {
             return nil
         }
         
-        return self.viewControllerAtIndex(index)
+        return self.viewControllerAtIndex(index: index)
         
     }
     
@@ -86,7 +83,7 @@ class ViewController: UIViewController, UIPageViewControllerDataSource {
             return nil
         }
         
-        let playervc = self.storyboard?.instantiateViewControllerWithIdentifier("pagecontent") as! PlayerViewController
+        let playervc = self.storyboard?.instantiateViewController(withIdentifier: "pagecontent") as! PlayerViewController
         
         playervc.pageIndex = index
         playervc.videoURL = URLs[index]

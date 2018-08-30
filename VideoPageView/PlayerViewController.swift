@@ -19,18 +19,18 @@ class PlayerViewController: AVPlayerViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        let url = NSURL(string: videoURL)
-        player = AVPlayer(URL: url!)
+        let url = URL(string: videoURL)
+        player = AVPlayer(url: url!)
     }
     
-    override func viewWillAppear(animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
         player!.play()
     
     }
     
-    override func viewWillDisappear(animated: Bool) {
+    override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         self.player!.pause()
     }

@@ -7,9 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		AA5C6E8E1B994FB0001943B3 /* PlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA5C6E8D1B994FB0001943B3 /* PlayerViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		AA5C6E8E1B994FB0001943B3 /* PlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA5C6E8D1B994FB0001943B3 /* PlayerViewController.swift */; };
 		AA5C6E901B99501C001943B3 /* AVKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA5C6E8F1B99501C001943B3 /* AVKit.framework */; };
-		AA5C6E951B995100001943B3 /* PageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA5C6E941B995100001943B3 /* PageViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		AA5C6E951B995100001943B3 /* PageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA5C6E941B995100001943B3 /* PageViewController.swift */; };
 		AA8FE3171B994E47006FF14C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA8FE3161B994E47006FF14C /* AppDelegate.swift */; };
 		AA8FE3191B994E47006FF14C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA8FE3181B994E47006FF14C /* ViewController.swift */; };
 		AA8FE31C1B994E47006FF14C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AA8FE31A1B994E47006FF14C /* Main.storyboard */; };
@@ -262,6 +262,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ethanfan.VideoPageView;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
 			};
 			name = Debug;
 		};
@@ -273,6 +274,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ethanfan.VideoPageView;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
 			};
 			name = Release;
 		};
